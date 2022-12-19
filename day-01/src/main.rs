@@ -2276,5 +2276,9 @@ fn main() {
             amount = calorie.parse::<i32>().unwrap() + amount;
         }
     }
-    println!("{}", highest);
+
+    let mut vec: Vec<_> = calculations.iter().collect();
+    vec.sort_by(|a, b| b.1.cmp(a.1));
+
+    println!("{}", vec[0].1 + vec[1].1 + vec[2].1);
 }
